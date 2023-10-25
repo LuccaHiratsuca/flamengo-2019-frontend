@@ -1,5 +1,13 @@
 # React + TypeScript + Vite
 
+## Contributors:
+* [Alexandre Magno](https://github.com/alemagno10)
+* [Eduardo Vaz](https://github.com/EduardoMVAz)
+* [João Lucas](https://github.com/JoaoLucasMBC)
+* [Lucca Hiratsuca Costa](https://github.com/LuccaHiratsuca)
+* [Pedro Pertusi](https://github.com/PedroPertusi)
+* [Thomas Chiari Ciocchetti de Souza](https://github.com/thomaschiari)
+
 ## Project Structure
 
 ### Folder Structure:
