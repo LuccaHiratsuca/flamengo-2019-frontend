@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# Flamengo-2019-frontend - React Ts
 
 ## Contributors:
 * [Alexandre Magno](https://github.com/alemagno10)
