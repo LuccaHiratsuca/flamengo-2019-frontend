@@ -3,6 +3,7 @@
 ## Project Structure
 
 ### Folder Structure:
+```python
 src
 ├── assets
 │   ├── images
@@ -15,6 +16,7 @@ src
 ├── types
 ├── util
 └── test
+```
 
 ### Descriptions:
 
