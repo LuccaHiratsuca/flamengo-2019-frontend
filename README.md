@@ -43,16 +43,17 @@ src
 
 - [x] Setup with all the folders (organized)
 - [x] Implement Routes General
-- [x] Implement Routes User
-- [x] Basic Page Login in Routes User (login)
+- [x] Implement Routes User (Authentication: login/register)
+- [x] Basic Page Login
 - [x] Connect to Zambom's API
 - [x] Save the token in local storage
 - [x] Implement React Redux
 - [x] Implement: get data from Zambom's API and save in React Redux
+- [ ] Implement Routes Rentals (main(list of all)/new/etc)
+- [ ] Basic Page Rentals (main(list of all))
+- [ ] Basic Page Rentals (main(list of all)) - with filters
 - [ ] Add Persistance in react redux
 - [ ] Refresh Token (implementation)
+- [ ] Basic Page New Rental (creation of a rental)
 - [ ] Connect to Palmeiras's API (our backend)
-- [ ] Page List of rentals
-- [ ] Page List of rentals: add filters
-- [ ] Page New Rental
 - [ ] Validation in forms
