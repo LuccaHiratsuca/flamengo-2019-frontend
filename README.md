@@ -15,3 +15,4 @@
 - [ ] Page List of rentals
 - [ ] Page List of rentals: add filters
 - [ ] Page New Rental
+- [ ] Validation in forms
