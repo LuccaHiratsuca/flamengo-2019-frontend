@@ -48,8 +48,9 @@ src
 - [x] Connect to Zambom's API
 - [x] Save the token in local storage
 - [x] Implement React Redux
-- [x] Implement data from Zambom's API in React Redux
+- [x] Implement: get data from Zambom's API and save in React Redux
 - [ ] Add Persistance in react redux
+- [ ] Refresh Token (implementation)
 - [ ] Connect to Palmeiras's API (our backend)
 - [ ] Page List of rentals
 - [ ] Page List of rentals: add filters
