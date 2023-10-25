@@ -2,11 +2,22 @@
     display: flex;
     flex-direction: column ;
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
     width: 80%;
     max-width: 600px;
     border-radius: 0.8rem;
     background-color: #a1a1a128;
+    
+  }
+
+  .formContainer{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
   }
   
   .form h1 {
@@ -17,28 +28,26 @@
   
   .form input {
     background-color: white;
-    display: flex ;
     margin-top: 1rem;
     padding: 1.2rem;
     border-radius: 0.5rem;
     border: none;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     font-size: 1.2rem;
-    width: 300px;
+    width: 20rem;
     font: 0.8rem "Roboto", sans-serif;
-
   }
   
   .form button {
-    display: flex ;
-    margin-top: 2rem;
-    margin-inline: auto;
     padding: 0.8rem 2rem;
     border-radius: 0.5rem;
+    display: flex;
     border: none;
     font-size: 1.2rem;
     background-color: #00244d;
     color: #fff;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   
   .form button:hover {

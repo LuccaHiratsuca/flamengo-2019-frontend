@@ -26,23 +26,26 @@ const FormUserRegister = () => {
 
     return (
         <div className={styles.form}>
-            <h1>FormUserRegister</h1>
-                <form onSubmit={handleSubmit(handleFormSubmit)}>
-                <Input 
-                    {...register("email")} 
-                    className={styles.input} 
-                    type="text" 
-                    placeholder="Email" 
-                />
+            <form onSubmit={handleSubmit(handleFormSubmit)}>
+                <div className={styles.formContainer}>
+                    <h1>Login</h1>
+                    <Input 
+                        {...register("email")} 
+                        className={styles.input} 
+                        type="text" 
+                        placeholder="Email" 
+                    />
 
-                <Input 
-                    {...register("password")} 
-                    className={styles.input} 
-                    type="password" 
-                    placeholder="Password" 
-                />
+                    <Input 
+                        {...register("password")} 
+                        className={styles.input} 
+                        type="password" 
+                        placeholder="Password" 
+                    />
+
                     <Button className={styles.button} variant="contained" color="primary" onClick={handleSubmit(handleFormSubmit)}>Register</Button>
-                </form>
+                </div>
+            </form>
         </div>
     )
 }
