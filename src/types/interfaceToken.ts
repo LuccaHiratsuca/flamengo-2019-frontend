@@ -4,5 +4,4 @@ export interface IRefreshTokenStatus {
     refreshToken: undefined | string;
     refreshTokenAction: undefined | string;
     refreshTokenStatus: undefined | string;
-
 }
