@@ -53,7 +53,7 @@ src
 - [ ] Implement Routes Rentals (main(list of all)/new/etc)
 - [ ] Basic Page Rentals (main(list of all))
 - [ ] Basic Page Rentals (main(list of all)) - with filters
-- [ ] Refresh Token (implementation)
+- [x] Refresh Token (implementation)
 - [ ] Basic Page New Rental (creation of a rental)
 - [ ] Connect to Palmeiras's API (our backend)
 - [ ] Validation in forms
