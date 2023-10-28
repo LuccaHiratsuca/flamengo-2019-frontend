@@ -1,16 +1,14 @@
-// authSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 import { userLogin } from '../actions/actionAuthentication';
-
-// Initialize userToken from local storage
-const userToken = localStorage.getItem('userToken') || null;
+import { IUserLoginResponse } from '../../types/interfaceUserLoginResponse';
+import { IError } from '../../types/interfaceError';
+import { AUTH_STATUS, AUTH_ACTIONS } from '../constants/constantsAuthentication';
 
 const initialState = {
-  loading: false,
-  userInfo: null,
-  userToken,
-  error: null,
-  success: false,
+  authenticationStatus: AUTH_STATUS.STANDARD,
+  authenticationAction: AUTH_ACTIONS.STANDARD,
+  userInfo: {} as IUserLoginResponse,
+  error: null as IError | null,
 };
 
 const authSlice = createSlice({
@@ -19,21 +17,23 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Login user
       .addCase(userLogin.pending, (state) => {
-        state.loading = true;
+        state.authenticationStatus = AUTH_STATUS.LOADING;
+        state.authenticationAction = AUTH_ACTIONS.PENDING;
         state.error = null;
       })
       .addCase(userLogin.fulfilled, (state, { payload }) => {
-        state.loading = false;
+        state.authenticationStatus = AUTH_STATUS.SUCCESS;
+        state.authenticationAction = AUTH_ACTIONS.FULFILLED;
+        state.userInfo.token = payload.token;
         state.userInfo = payload;
-        state.userToken = payload.userToken;
       })
       .addCase(userLogin.rejected, (state, { payload }) => {
-        state.loading = false;
-        state.error = payload as any;
+        state.authenticationStatus = AUTH_STATUS.ERROR;
+        state.authenticationAction = AUTH_ACTIONS.REJECTED;
+        state.error = payload || { message: 'An unknown error occurred' };
       });
   },
 });
 
-export default authSlice.reducer;
+export const authReducer = authSlice.reducer;
