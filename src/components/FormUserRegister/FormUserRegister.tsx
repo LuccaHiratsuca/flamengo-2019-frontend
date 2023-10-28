@@ -1,27 +1,28 @@
-import { Input } from "@mui/material";
-import { Button } from "@mui/material";
-import styles from "./FormUserRegister.module.css";
+import { Input, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from 'react-redux'
-import { userLogin } from '../../store/actions/actionAuthentication'
-import { AppDispatch } from '../../store'
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogin } from '../../store/actions/actionAuthentication';
+import { AppDispatch } from '../../store';
+import styles from "./FormUserRegister.module.css";
+import { redirect, useNavigate } from 'react-router-dom';
+import { AuthState } from "../../types/interfaceAuthState";
 
-interface AuthState {
-    loading: boolean;
-    userInfo: null;
-    userToken: string | null;
-    error: null;
-    success: boolean;
-  }
 
 const FormUserRegister = () => {
-
-    const { loading, error } = useSelector((state: { auth: AuthState }) => state.auth);
+    const { loading, error, userToken } = useSelector((state: { auth: AuthState }) => state.auth);
     const dispatch: AppDispatch = useDispatch();
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
     const handleFormSubmit = (data: any) => {
+        
         dispatch(userLogin(data))
+            .then((action: any) => {
+                console.log(action);
+                if (action.type.endsWith('fulfilled')) {
+                    navigate("/rentals");
+                }
+            });
     }
 
     return (
@@ -30,10 +31,11 @@ const FormUserRegister = () => {
                 <div className={styles.formContainer}>
                     <h1>Login</h1>
                     <Input 
-                        {...register("email")} 
+                        {...register("email", { required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, message: "Invalid email address" } })}
                         className={styles.input} 
-                        type="text" 
+                        type="text"     
                         placeholder="Email" 
+                        value="admin@sa.com"
                     />
 
                     <Input 
@@ -41,13 +43,14 @@ const FormUserRegister = () => {
                         className={styles.input} 
                         type="password" 
                         placeholder="Password" 
+                        value="123456"
                     />
 
-                    <Button className={styles.button} variant="contained" color="primary" onClick={handleSubmit(handleFormSubmit)}>Register</Button>
+                    <Button className={styles.button} variant="contained" color="primary" type="submit" onClick={handleSubmit(handleFormSubmit)}>Register</Button>
                 </div>
             </form>
         </div>
     )
 }
 
-export default FormUserRegister
+export default FormUserRegister;
