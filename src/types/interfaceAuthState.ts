@@ -8,5 +8,4 @@ export interface AuthState {
 
 interface UserInfo {
     token: string;
-    // ... any other properties of userInfo
 }
