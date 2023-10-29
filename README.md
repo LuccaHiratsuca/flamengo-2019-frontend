@@ -65,3 +65,6 @@ src
 - [ ] Make tests
 - [ ] Logout
 - [ ] Filter of data
+- [ ] "More Details" of each rental
+- [ ] Update a rental
+- [ ] Delete a rental
