@@ -41,6 +41,7 @@ src
 
 ## Progress
 
+### Basic Features:
 - [x] Setup with all the folders (organized)
 - [x] Implement Routes General
 - [x] Implement Routes User (Authentication: login/register)
@@ -51,10 +52,16 @@ src
 - [x] Implement: get data from Zambom's API and save in React Redux
 - [x] Add Persistance in react redux
 - [x] Add Middleware unathorized
-- [ ] Implement Routes Rentals (main(list of all)/new/etc)
-- [ ] Basic Page Rentals (main(list of all))
-- [ ] Basic Page Rentals (main(list of all)) - with filters
+- [x] Connect to Palmeiras's API (our backend)
+- [x] Basic Page Rentals (main(list of all))
+- [x] Basic Page Rentals (main(list of all)) - with filters
 - [x] Refresh Token (implementation)
+- [ ] Implement Routes Rentals (main(list of all)/new/etc)
 - [ ] Basic Page New Rental (creation of a rental)
-- [ ] Connect to Palmeiras's API (our backend)
+
+### Extra Features:
+- [ ] Add Header
 - [ ] Validation in forms
+- [ ] Make tests
+- [ ] Logout
+- [ ] Filter of data
