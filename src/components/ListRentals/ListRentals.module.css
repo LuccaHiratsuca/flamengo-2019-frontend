@@ -1,0 +1,25 @@
+.tableContainer {
+    max-width: 80%; 
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.table {
+    width: 100%; 
+    overflow-x: auto; 
+}
+
+.filtersContainer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.filtersContainer > div {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+

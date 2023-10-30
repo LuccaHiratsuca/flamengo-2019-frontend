@@ -8,4 +8,3 @@ export const authApi = createApi({
     }),
     endpoints: () => ({}),
 });
-// TO-DO: add endpoints to authApi
