@@ -21,7 +21,6 @@ export const getRentals = createAsyncThunk<IRentals, void, { rejectValue: IError
       return data;
     } catch (error) {
       let errorMessage = 'An unknown error occurred';
-      window.location.href = '/user/login';
       if (axios.isAxiosError(error)) {
         errorMessage = error.response?.data?.message || errorMessage;
       } else if (error instanceof Error) {

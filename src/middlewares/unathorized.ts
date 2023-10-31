@@ -13,7 +13,7 @@ export const redirectMiddleware: Middleware = (store) => (next) => (action) => {
             window.location.href = '/user/login';
         }   
     }
-
+    
     if ((tokenState.refreshTokenStatus === 'REFRESH_REJECTED')){
         window.location.href = '/user/login';
     }
