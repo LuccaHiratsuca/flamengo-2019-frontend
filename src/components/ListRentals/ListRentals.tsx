@@ -18,6 +18,14 @@ import { IFilters } from '../../types/interfaceFilterOptions';
 const ListRentals = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { loading, infoRentals, error } = useSelector((state: { rentals: RentalState }) => state.rentals);
+    const [displayedFilters, setDisplayedFilters] = useState<number>(4);
+
+    const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+    const toggleFilters = () => {
+        setIsExpanded(!isExpanded);
+        setDisplayedFilters(isExpanded ? 4 : 6);
+    };
   
     useEffect(() => { 
         dispatch(getRentals());
@@ -78,14 +86,22 @@ const ListRentals = () => {
     const filteredRentals = getFilteredRentals();
     return (
       <div>
-          <div className={styles.filtersContainer}>
-              <Filter label="Data Aluguel" value={filters.dataAluguel} onChange={handleFilterChange('dataAluguel')} options={getUniqueOptions('dataAluguel')}/>
-              <Filter label="Identifier" value={filters.identifier} onChange={handleFilterChange('identifier')} options={getUniqueOptions('identifier')} />
-              <Filter label="Status" value={filters.status} onChange={handleFilterChange('status')} options={getUniqueOptions('status')} />
-              <Filter label="CPF Corretor" value={filters.cpfCorretor} onChange={handleFilterChange('cpfCorretor')} options={getUniqueOptions('cpfCorretor')} />
-              <Filter label="CPF Locatário" value={filters.cpfLocatario} onChange={handleFilterChange('cpfLocatario')} options={getUniqueOptions('cpfLocatario')} />
-              <Filter label="ID Imóvel" value={filters.idImovel} onChange={handleFilterChange('idImovel')} options={getUniqueOptions('idImovel')} />
-          </div>
+            <div className={styles.filter}>
+                <h2> What're you looking for?</h2>
+                <div className={styles.filterContent}>
+                    <div className={styles.filtersContainer}>
+                        {displayedFilters >= 1 && <Filter label="Data Aluguel" value={filters.dataAluguel} onChange={handleFilterChange('dataAluguel')} options={getUniqueOptions('dataAluguel')}/>}
+                        {displayedFilters >= 2 && <Filter label="Identifier" value={filters.identifier} onChange={handleFilterChange('identifier')} options={getUniqueOptions('identifier')} />}
+                        {displayedFilters >= 3 && <Filter label="Status" value={filters.status} onChange={handleFilterChange('status')} options={getUniqueOptions('status')} />}
+                        {displayedFilters >= 4 && <Filter label="CPF Corretor" value={filters.cpfCorretor} onChange={handleFilterChange('cpfCorretor')} options={getUniqueOptions('cpfCorretor')} />}
+                        {displayedFilters >= 5 && <Filter label="CPF Locatário" value={filters.cpfLocatario} onChange={handleFilterChange('cpfLocatario')} options={getUniqueOptions('cpfLocatario')} />}
+                        {displayedFilters >= 6 && <Filter label="ID Imóvel" value={filters.idImovel} onChange={handleFilterChange('idImovel')} options={getUniqueOptions('idImovel')} />}
+                    </div>
+                    <button className={styles.toggleButtonIcon} onClick={toggleFilters}>
+                        {isExpanded ? "-" : "+"}
+                    </button>
+                </div>
+            </div>
             <TableContainer component={Paper} className={styles.tableContainer}>
                 <Table aria-label="rentals table" className={styles.table}>
                     <TableHead>

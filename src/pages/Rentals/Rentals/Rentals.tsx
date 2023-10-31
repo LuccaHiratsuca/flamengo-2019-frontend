@@ -11,7 +11,7 @@ export const Rentals = () => {
         <h1> Rentals </h1>
         <div>
           <Button className={styles.greenButton} variant="contained" href="/rentals/new"> New Rental </Button>
-          <ListRentals />
+          <ListRentals /> 
         </div>
       </>
 

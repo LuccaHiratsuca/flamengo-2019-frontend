@@ -6,23 +6,23 @@ export const StyledTextField = styled(TextField)`
   flex: 1;
   
   .MuiInputLabel-root {
-    color: white;
+    color: black;
   }
 
   .MuiOutlinedInput-input {
-    color: white;
+    color: black;
   }
 
   .MuiOutlinedInput-root {
-    border-color: white;
+    border-color: black;
 
     &:hover {
-      border-color: white;
+      border-color: black;
     }
   }
 
   .MuiOutlinedInput-notchedOutline {
-    border-color: white;
+    border-color: black;
   }
   
 `;
@@ -31,7 +31,7 @@ export const HelperTextContainer = styled.div`
     margin-top: 8px;
 
     .MuiFormHelperText-root {
-      color: white;
+      color: black;
     }
 
 `;
