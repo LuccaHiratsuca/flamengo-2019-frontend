@@ -44,13 +44,17 @@
     display: flex;
     border: none;
     font-size: 1.2rem;
-    background-color: #00244d;
+    background-color: darkgreen;
     color: #fff;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
   
   .form button:hover {
-    background-color: rgb(4, 66, 95) !important;
+    background-color: rgb(53, 181, 79) !important;
+  }
+
+  .form input:hover {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   }
   

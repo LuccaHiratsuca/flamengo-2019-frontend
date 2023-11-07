@@ -29,7 +29,7 @@ const FormUserRegister = () => {
         <div className={styles.form}>
             <form onSubmit={handleSubmit(handleFormSubmit)}>
                 <div className={styles.formContainer}>
-                    <h1>Login</h1>
+                    <h1>WELCOME TO THE MATO</h1>
                     <Input 
                         {...register("email", { required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, message: "Invalid email address" } })}
                         className={styles.input} 
@@ -46,7 +46,7 @@ const FormUserRegister = () => {
                         value="123456"
                     />
 
-                    <Button className={styles.button} variant="contained" color="primary" type="submit" onClick={handleSubmit(handleFormSubmit)}>Register</Button>
+                    <Button className={styles.button} variant="contained" color="primary" type="submit" onClick={handleSubmit(handleFormSubmit)}>SIGN IN</Button>
                 </div>
             </form>
         </div>
