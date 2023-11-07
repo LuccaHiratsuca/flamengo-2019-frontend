@@ -8,6 +8,7 @@ import { AuthState } from "../../types/interfaceAuthState";
 const AuthVerifier = () => {
 
     const token: string | undefined = useSelector((state: { auth: AuthState }) => state.auth.userInfo?.token);
+    const userInformation = useSelector((state: { auth: AuthState }) => state.auth.userInfo);
     const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +19,6 @@ const AuthVerifier = () => {
         if (token) {
           try {
             const action = await dispatch(verifyToken(token));
-            console.log(action.type);
             if (action.type === verifyToken.fulfilled.type) {
               setIsLoading(false);
             } else {
