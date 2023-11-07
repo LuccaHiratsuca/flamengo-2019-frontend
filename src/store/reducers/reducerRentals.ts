@@ -1,4 +1,4 @@
-import { getRentals } from './../actions/actionRentals';
+import { getRentals, newRental } from './../actions/actionRentals';
 import { IRentals } from './../../types/interfaceRentalState';
 import { createSlice } from '@reduxjs/toolkit';
 import { RENTALS_STATUS, RENTALS_ACTIONS } from '../constants/constantsRentals';
@@ -8,7 +8,7 @@ const initialState = {
   rentalsStatus: RENTALS_STATUS.STANDARD,
   rentalsAction: RENTALS_ACTIONS.STANDARD,
   infoRentals: {} as IRentals,
-  error: null as IError | null,
+  msgErro: null as IError | null,
 };
 
 const rentalsSlice = createSlice({
@@ -17,10 +17,12 @@ const rentalsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+
+      // GET
       .addCase(getRentals.pending, (state) => {
         state.rentalsStatus = RENTALS_STATUS.LOADING;
         state.rentalsAction = RENTALS_ACTIONS.PENDING;
-        state.error = null;
+        state.msgErro = null;
       }
       )
       .addCase(getRentals.fulfilled, (state, { payload }) => {
@@ -31,8 +33,24 @@ const rentalsSlice = createSlice({
       .addCase(getRentals.rejected, (state, { payload }) => {
         state.rentalsStatus = RENTALS_STATUS.ERROR;
         state.rentalsAction = RENTALS_ACTIONS.REJECTED;
-        state.error = payload || { message: 'An unknown error occurred' };
-      });
+        state.msgErro = payload || { message: 'An unknown error occurred' };
+      })
+
+      // POST
+
+      .addCase(newRental.rejected, (state, { payload }) => {
+        state.rentalsStatus = RENTALS_STATUS.ERROR;
+        state.rentalsAction = RENTALS_ACTIONS.REJECTED;
+        state.msgErro = payload || { message: 'An unknown error occurred' };
+      })
+
+      .addCase(newRental.fulfilled, (state, { payload }) => {
+        state.rentalsStatus = RENTALS_STATUS.SUCCESS;
+        state.rentalsAction = RENTALS_ACTIONS.FULFILLED;
+        state.infoRentals = payload;
+      }
+      )
+
   }
 });
 

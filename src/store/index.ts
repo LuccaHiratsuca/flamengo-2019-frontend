@@ -7,6 +7,7 @@ import { rentalApi } from '../services/api-rental';
 import { redirectMiddleware } from '../middlewares/unathorized';
 import { tokenReducer } from './reducers/reducerToken';
 import { rentalsReducer } from './reducers/reducerRentals';
+// import { sideBarReducer } from './reducers/reducerSideBar';
 
 const persistConfig = {
   key: 'root',
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   token: tokenReducer,
   rentals: rentalsReducer,
+  // sideBar: sideBarReducer,
   [authApi.reducerPath]: authApi.reducer,
   [rentalApi.reducerPath]: rentalApi.reducer,
 });
