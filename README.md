@@ -60,11 +60,11 @@ src
 - [x] Basic Page Rentals (main(list of all))
 - [x] Basic Page Rentals (main(list of all)) - with filters
 - [x] Refresh Token (implementation)
-- [ ] Implement Routes Rentals (main(list of all)/new/etc)
-- [ ] Basic Page New Rental (creation of a rental)
+- [x] Implement Routes Rentals (main(list of all)/new)
+- [x] Basic Page New Rental (creation of a rental)
 
 ### Extra Features:
-- [ ] Add Header
+- [x] Add Header
 - [ ] Validation in forms
 - [ ] Make tests
 - [ ] Logout
